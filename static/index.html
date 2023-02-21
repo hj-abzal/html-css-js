@@ -9,32 +9,28 @@
 </head>
 <style>
     body {
-        width: 100vw;
+        background-color: black;
         height: 100vh;
         margin: 0;
-        background-color: black;
-        position: relative;
+        overflow: hidden;
     }
 
     #blob {
-        height: 500px;
-        position: absolute;
+        height: 34vmax;
         aspect-ratio: 1;
+        position: absolute;
         left: 50%;
         top: 50%;
-        transform: translate(-50%, -50%);
+        translate: -50% -50%;
         border-radius: 50%;
-        background: linear-gradient(
-                to right,
-                aquamarine,
-                violet
-        );
-        animation: rotate 4s infinite linear;
+        background: linear-gradient(to right, aquamarine, mediumpurple);
+        animation: rotate 20s infinite;
+        opacity: 0.8;
     }
 
     @keyframes rotate {
         from {
-            transform: rotate(0deg);
+            rotate: 0deg;
         }
 
         50% {
@@ -42,7 +38,7 @@
         }
 
         to {
-            transform: rotate(360deg);
+            rotate: 360deg;
         }
     }
 
