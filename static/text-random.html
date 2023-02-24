@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: black;
+        }
+
+        h1 {
+            color: white;
+            font-size: 5rem;
+            font-family: "Space Mono", monospace;
+        }
+    </style>
+</head>
+<body>
+
+<script>
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+    document.querySelector("h1").onmouseover = event => {
+        let i = 0;
+
+        const interval = setInterval(() => {
+            event.target.innerText = event.target.innerText.split("").map( (letter,index) =>{
+                if (index < i) {
+                    return event.target.dataset.value[index]
+                }
+                return letters[Math.floor(Math.random() * 26)]
+            }).join("");
+            if (i >= event.target.dataset.value.length) clearInterval(interval)
+            i += 1/2;
+        }, 30)
+    }
+</script>
+</body>
+</html>
